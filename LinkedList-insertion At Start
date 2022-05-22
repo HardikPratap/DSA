@@ -18,6 +18,8 @@ public class ll {
     }
 
     public void display(){
+    //use temp instead of head so the structure of linked list renmains same
+    
         Node temp=head;
         while(temp!=null){
             System.out.print(temp.val+"->");
