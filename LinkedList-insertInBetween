@@ -1,0 +1,15 @@
+public void insertBetween(int val,int ind){
+        if (ind==0){
+            insertFirst(val);
+        }
+        if (ind==size){
+            insertLast(val);
+        }
+        Node temp=head;
+        for (int i = 1; i < ind; i++) {
+            temp=temp.next;
+        }
+        Node node=new Node(val,temp.next);
+        temp.next=node;
+        size++;
+    }
