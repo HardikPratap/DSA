@@ -1,0 +1,38 @@
+//insertion at start
+    public void insertStart(int val){
+        Node node = new Node(val);
+        node.next=head;
+        node.prev=null;
+        if (head!=null)
+            head.prev=node;    //checks condition if the list is empty
+        head=node;
+    }
+
+    //insertion at end
+    public void insertEnd(int val){
+        Node node =new Node(val);
+        //condition to check null list
+        if (head==null){
+            head.prev=null;
+            head=node;
+            return;
+        }
+        Node last=head;
+        while(last.next!=null){
+            last=last.next;
+        }
+        node.prev=last;
+        node.next=null;
+        last.next=node;
+        node=last;
+    }
+    
+    //function to display list value
+    public void display(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.val+"->");
+            temp=temp.next;
+        }
+        System.out.println("end");
+    }
